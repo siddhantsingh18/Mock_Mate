@@ -118,7 +118,9 @@ export default function InterviewSession() {
 
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SR();
-    recognition.continuous = true;
+
+    const isMobile =/Android|iPhone|iPad/i.test(navigator.userAgent)
+    recognition.continuous = !isMobile;
     recognition.interimResults = true;
     recognition.lang = 'en-UK';
     recognition.maxAlternatives = 1;
@@ -166,12 +168,15 @@ export default function InterviewSession() {
     };
 
    recognition.onend = () => {
-  console.log("Recognition ended");
+    setIsRecording(false)
+    if (finalTranscriptRef.current) {
+      setAnswer(finalTranscriptRef.current.trim())
+    }
 
-  if (isRecording) {
+  if (isMobile && isRecording) {
     try {
       recognition.start(); 
-    } catch (e) {}
+    } catch {}
   }
 };
 
