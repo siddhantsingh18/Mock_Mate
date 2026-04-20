@@ -16,103 +16,108 @@ export default function Landing() {
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg)', overflowX: 'hidden' }}>
-      {/* Nav */}
-      <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '20px 5%', borderBottom: '1px solid var(--border)', position: 'sticky', top: 0, background: 'rgba(8,12,20,0.9)', backdropFilter: 'blur(16px)', zIndex: 100 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <div style={{ width: 38, height: 38, borderRadius: 10, background: 'linear-gradient(135deg, #2563eb, #0891b2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20 }}>🎯</div>
-          <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 22 }}>MockMate</span>
+
+      {/* NAVBAR */}
+      <nav style={{
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        padding: '0 5%', height: 64,
+        borderBottom: '1px solid var(--border)',
+        position: 'sticky', top: 0,
+        background: 'rgba(8,12,20,0.92)',
+        backdropFilter: 'blur(16px)', zIndex: 100,
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 9, flexShrink: 0 }}>
+          <div style={{ width: 32, height: 32, borderRadius: 9, background: 'linear-gradient(135deg, #2563eb, #0891b2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 17 }}>🎯</div>
+          <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 18 }}>MockMate</span>
         </div>
-        <div style={{ display: 'flex', gap: 12 }}>
-          <button onClick={() => navigate('/login')} className="btn-secondary" style={{ padding: '9px 20px' }}>Sign In</button>
-          <button onClick={() => navigate('/register')} className="btn-primary" style={{ padding: '9px 20px' }}>Get Started</button>
+        <div style={{ display: 'flex', gap: 8, flexShrink: 0 }}>
+          <button onClick={() => navigate('/login')} style={{ background: 'var(--bg-elevated)', color: 'var(--text)', border: '1px solid var(--border-light)', borderRadius: 8, padding: '7px 14px', fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 13, cursor: 'pointer', whiteSpace: 'nowrap' }}>
+            Sign In
+          </button>
+          <button onClick={() => navigate('/register')} style={{ background: 'linear-gradient(135deg, #2563eb, #0891b2)', color: 'white', border: 'none', borderRadius: 8, padding: '7px 14px', fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 13, cursor: 'pointer', whiteSpace: 'nowrap' }}>
+            Get Started
+          </button>
         </div>
       </nav>
 
-      {/* Hero */}
-      <section style={{ textAlign: 'center', padding: '100px 5% 80px', position: 'relative' }}>
-        <div style={{ position: 'absolute', top: '10%', left: '50%', transform: 'translateX(-50%)', width: 600, height: 600, background: 'radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 70%)', pointerEvents: 'none' }} />
+      {/* HERO */}
+      <section style={{ textAlign: 'center', padding: 'clamp(56px, 10vw, 100px) 5% 60px', position: 'relative' }}>
+        <div style={{ position: 'absolute', top: '10%', left: '50%', transform: 'translateX(-50%)', width: 500, height: 500, background: 'radial-gradient(circle, rgba(37,99,235,0.1) 0%, transparent 70%)', pointerEvents: 'none' }} />
         <div className="animate-fade-in">
-         
-          <h1 style={{ fontSize: 'clamp(36px, 6vw, 72px)', fontWeight: 800, marginBottom: 24, lineHeight: 1.1, letterSpacing: '-2px' }}>
+        
+          <h1 style={{ fontSize: 'clamp(30px, 7vw, 72px)', fontWeight: 800, marginBottom: 18, lineHeight: 1.1, letterSpacing: '-2px' }}>
             Ace Your Next Interview<br />
             <span className="gradient-text">with AI Coaching</span>
           </h1>
-          <p style={{ fontSize: 'clamp(16px, 2vw, 20px)', color: 'var(--text-dim)', maxWidth: 560, margin: '0 auto 40px', lineHeight: 1.7 }}>
+          <p style={{ fontSize: 'clamp(14px, 2vw, 18px)', color: 'var(--text-dim)', maxWidth: 500, margin: '0 auto 32px', lineHeight: 1.7, padding: '0 8px' }}>
             Practice with AI-generated FAANG-level questions, get instant feedback, and track your progress until you land the job.
           </p>
-          <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <button onClick={() => navigate('/register')} className="btn-primary" style={{ fontSize: 16, padding: '14px 32px' }}>
-              Start Free Practice →
+          <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap', padding: '0 16px' }}>
+            <button onClick={() => navigate('/register')} style={{ background: 'linear-gradient(135deg, #2563eb, #0891b2)', color: 'white', border: 'none', borderRadius: 10, padding: '12px 26px', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 15, cursor: 'pointer', whiteSpace: 'nowrap' }}>
+              Start Free Practice 
             </button>
-            <button onClick={() => navigate('/login')} className="btn-secondary" style={{ fontSize: 16, padding: '14px 32px' }}>
+            <button onClick={() => navigate('/login')} style={{ background: 'var(--bg-elevated)', color: 'var(--text)', border: '1px solid var(--border-light)', borderRadius: 10, padding: '12px 26px', fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 15, cursor: 'pointer', whiteSpace: 'nowrap' }}>
               Sign In
             </button>
           </div>
         </div>
 
         {/* Stats */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: 48, marginTop: 72, flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 'clamp(20px, 5vw, 52px)', marginTop: 56, flexWrap: 'wrap', padding: '0 16px' }}>
           {[['500+', 'Questions Generated'], ['8+', 'Job Roles'], ['Real-time', 'AI Feedback'], ['Adaptive', 'Difficulty']].map(([val, label]) => (
             <div key={label} style={{ textAlign: 'center' }}>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 28, fontWeight: 800, color: 'var(--accent)' }}>{val}</div>
-              <div style={{ fontSize: 13, color: 'var(--text-muted)', marginTop: 4 }}>{label}</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(20px, 4vw, 28px)', fontWeight: 800, color: 'var(--accent)' }}>{val}</div>
+              <div style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 3 }}>{label}</div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Features */}
-      <section style={{ padding: '80px 5%', borderTop: '1px solid var(--border)' }}>
-        <div style={{ textAlign: 'center', marginBottom: 60 }}>
-          <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 800, letterSpacing: '-1px', marginBottom: 16 }}>
-            Everything You Need to Get Hired
-          </h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: 17, maxWidth: 480, margin: '0 auto' }}>
-            A complete mock interview platform built for serious candidates.
-          </p>
+      {/* FEATURES */}
+      <section style={{ padding: 'clamp(40px, 7vw, 80px) 5%', borderTop: '1px solid var(--border)' }}>
+        <div style={{ textAlign: 'center', marginBottom: 44 }}>
+          <h2 style={{ fontSize: 'clamp(22px, 4vw, 42px)', fontWeight: 800, letterSpacing: '-1px', marginBottom: 12 }}>Everything You Need to Get Hired</h2>
+          <p style={{ color: 'var(--text-muted)', fontSize: 15, maxWidth: 420, margin: '0 auto' }}>A complete mock interview platform built for serious candidates.</p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20, maxWidth: 1000, margin: '0 auto' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 14, maxWidth: 1000, margin: '0 auto' }}>
           {features.map(({ icon, title, desc }) => (
-            <div key={title} className="card card-hover" style={{ padding: 28 }}>
-              <div style={{ fontSize: 32, marginBottom: 16 }}>{icon}</div>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 17, fontWeight: 700, marginBottom: 10 }}>{title}</h3>
-              <p style={{ color: 'var(--text-dim)', fontSize: 14, lineHeight: 1.7 }}>{desc}</p>
+            <div key={title} className="card" style={{ padding: 22 }}>
+              <div style={{ fontSize: 28, marginBottom: 12 }}>{icon}</div>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 15, fontWeight: 700, marginBottom: 7 }}>{title}</h3>
+              <p style={{ color: 'var(--text-dim)', fontSize: 13, lineHeight: 1.7 }}>{desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Roles */}
-      <section style={{ padding: '80px 5%', background: 'var(--bg-card)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
-        <div style={{ textAlign: 'center', marginBottom: 48 }}>
-          <h2 style={{ fontSize: 'clamp(24px, 3.5vw, 40px)', fontWeight: 800, letterSpacing: '-1px', marginBottom: 12 }}>Interviews for Every Role</h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: 16 }}>From fresh graduates to senior engineers</p>
+      {/* ROLES */}
+      <section style={{ padding: 'clamp(40px, 7vw, 80px) 5%', background: 'var(--bg-card)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
+        <div style={{ textAlign: 'center', marginBottom: 32 }}>
+          <h2 style={{ fontSize: 'clamp(20px, 3.5vw, 36px)', fontWeight: 800, letterSpacing: '-1px', marginBottom: 8 }}>Interviews for Every Role</h2>
+          <p style={{ color: 'var(--text-muted)', fontSize: 14 }}>From fresh graduates to Senior Engineers</p>
         </div>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center', maxWidth: 700, margin: '0 auto' }}>
-          {roles.map(role => (
-            <span key={role} className="tag" style={{ padding: '8px 18px', fontSize: 14 }}>{role}</span>
-          ))}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 9, justifyContent: 'center', maxWidth: 660, margin: '0 auto' }}>
+          {roles.map(role => <span key={role} className="tag" style={{ padding: '6px 14px', fontSize: 13 }}>{role}</span>)}
         </div>
       </section>
 
       {/* CTA */}
-      <section style={{ padding: '100px 5%', textAlign: 'center' }}>
-        <h2 style={{ fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 800, letterSpacing: '-1.5px', marginBottom: 20 }}>
-          Ready to Crush Your Interview?
-        </h2>
-        <p style={{ color: 'var(--text-muted)', fontSize: 18, marginBottom: 40 }}>Start practicing now — it's completely free.</p>
-        <button onClick={() => navigate('/register')} className="btn-primary" style={{ fontSize: 17, padding: '16px 40px' }}>
-          Create Free Account →
+      <section style={{ padding: 'clamp(56px, 10vw, 100px) 5%', textAlign: 'center' }}>
+        <h2 style={{ fontSize: 'clamp(22px, 4vw, 44px)', fontWeight: 800, letterSpacing: '-1.5px', marginBottom: 14 }}>Ready to Crush Your Interview?</h2>
+        <p style={{ color: 'var(--text-muted)', fontSize: 16, marginBottom: 32 }}>Start practicing now — it's completely free.</p>
+        <button onClick={() => navigate('/register')} style={{ background: 'linear-gradient(135deg, #2563eb, #0891b2)', color: 'white', border: 'none', borderRadius: 12, padding: '14px 34px', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 16, cursor: 'pointer' }}>
+          Create Free Account 
         </button>
       </section>
 
-      {/* Footer */}
-      <footer style={{ borderTop: '1px solid var(--border)', padding: '24px 5%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <span style={{ fontSize: 18 }}>🎯</span>
+      {/* FOOTER */}
+      <footer style={{ borderTop: '1px solid var(--border)', padding: '18px 5%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
+          <span style={{ fontSize: 16 }}>🎯</span>
           <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700 }}>MockMate</span>
         </div>
-        <p style={{ color: 'var(--text-muted)', fontSize: 13 }}>AI-powered interview preparation platform</p>
+        <p style={{ color: 'var(--text-muted)', fontSize: 12 }}>AI-powered interview preparation platform</p>
+      
       </footer>
     </div>
   );
