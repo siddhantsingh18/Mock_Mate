@@ -16,29 +16,91 @@ export default function Landing() {
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg)', overflowX: 'hidden' }}>
+{/* NAVBAR */}
+<nav style={{
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  padding: '8px 5%',
+  minHeight: 64,
+  borderBottom: '1px solid var(--border)',
+  position: 'sticky',
+  top: 0,
+  background: 'rgba(8,12,20,0.92)',
+  backdropFilter: 'blur(16px)',
+  zIndex: 100,
+  flexWrap: 'wrap'
+}}>
 
-      {/* NAVBAR */}
-      <nav style={{
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '0 5%', height: 64,
-        borderBottom: '1px solid var(--border)',
-        position: 'sticky', top: 0,
-        background: 'rgba(8,12,20,0.92)',
-        backdropFilter: 'blur(16px)', zIndex: 100,
+  {/* LOGO */}
+  <div style={{
+    display: 'flex',
+    alignItems: 'center',
+    gap: 8,
+    flexShrink: 0
+  }}>
+    <div style={{
+      width: 30,
+      height: 30,
+      borderRadius: 8,
+      background: 'linear-gradient(135deg, #2563eb, #0891b2)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: 16
+    }}>🎯</div>
+
+    <span style={{
+      fontFamily: 'var(--font-display)',
+      fontWeight: 800,
+      fontSize: 16
+    }}>
+      MockMate
+    </span>
+  </div>
+
+  {/* BUTTONS */}
+  <div style={{
+    display: 'flex',
+    gap: 6,
+    flexWrap: 'wrap', 
+    justifyContent: 'flex-end'
+  }}>
+    
+    <button
+      onClick={() => navigate('/login')}
+      style={{
+        background: 'var(--bg-elevated)',
+        color: 'var(--text)',
+        border: '1px solid var(--border-light)',
+        borderRadius: 6,
+        padding: '6px 10px', 
+        fontFamily: 'var(--font-display)',
+        fontWeight: 600,
+        fontSize: '12px', 
+        cursor: 'pointer'
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 9, flexShrink: 0 }}>
-          <div style={{ width: 32, height: 32, borderRadius: 9, background: 'linear-gradient(135deg, #2563eb, #0891b2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 17 }}>🎯</div>
-          <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 18 }}>MockMate</span>
-        </div>
-        <div style={{ display: 'flex', gap: 8, flexShrink: 0 }}>
-          <button onClick={() => navigate('/login')} style={{ background: 'var(--bg-elevated)', color: 'var(--text)', border: '1px solid var(--border-light)', borderRadius: 8, padding: '7px 14px', fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 13, cursor: 'pointer', whiteSpace: 'nowrap' }}>
-            Sign In
-          </button>
-          <button onClick={() => navigate('/register')} style={{ background: 'linear-gradient(135deg, #2563eb, #0891b2)', color: 'white', border: 'none', borderRadius: 8, padding: '7px 14px', fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 13, cursor: 'pointer', whiteSpace: 'nowrap' }}>
-            Get Started
-          </button>
-        </div>
-      </nav>
+      Sign In
+    </button>
+
+    <button
+      onClick={() => navigate('/register')}
+      style={{
+        background: 'linear-gradient(135deg, #2563eb, #0891b2)',
+        color: 'white',
+        border: 'none',
+        borderRadius: 6,
+        padding: '6px 10px', 
+        fontFamily: 'var(--font-display)',
+        fontWeight: 600,
+        fontSize: '12px', 
+        cursor: 'pointer'
+      }}>
+      Get Started
+    </button>
+
+  </div>
+</nav>
 
       {/* HERO */}
       <section style={{ textAlign: 'center', padding: 'clamp(56px, 10vw, 100px) 5% 60px', position: 'relative' }}>
